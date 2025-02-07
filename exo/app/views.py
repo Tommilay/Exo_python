@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from app.models import Book
-from app.form import contactform
+from app.form import contactform, Bookform
 from django.core.mail import send_mail
 
 
@@ -32,3 +32,14 @@ def contact_us(request):
 
 def sera(request):
     return render(request,'app/sera.html')
+
+def Book_add(request):
+    if request.method == 'POST':
+        form = Bookform(request.POST)
+        if form.is_valid():
+            book = form.save() 
+            return redirect(details, book.id)
+    else:
+        form = Bookform()
+
+    return render(request, 'app/add.html', {'form' : form})

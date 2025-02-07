@@ -1,10 +1,11 @@
-{% extends "master.html" %}
+{% extends "app/master.html" %}
 
 {% block title %}Liste livre{% endblock %}
 
 {% block content %}
 <h1>Salama daholo e!</h1>
-<a href="contact_us">sera</a>
+<a href="contact_us">sera</a><br>
+<a href="add">Ajouter un livre</a>
 <ul>
     {% for b in boky %}
     <li><a href="details/{{b.id}}">{{b.titre}}</a></li>
