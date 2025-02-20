@@ -9,4 +9,5 @@ urlpatterns = [
     path('contact_us',views.contact_us),
     path('sera',views.sera),
     path('add',views.Book_add),
+    path('update/<int:id>',views.Book_update),
 ]

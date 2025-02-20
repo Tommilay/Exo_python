@@ -8,7 +8,11 @@
 <a href="add">Ajouter un livre</a>
 <ul>
     {% for b in boky %}
-    <li><a href="details/{{b.id}}">{{b.titre}}</a></li>
+
+    <li>
+        <a href="details/{{b.id}}">{{b.titre}}</a> ---
+        <a href="update/{{b.id}}">[Modifier]</a>
+    </li>
     {% endfor %}
 </ul>
 {% endblock %}

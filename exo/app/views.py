@@ -43,3 +43,19 @@ def Book_add(request):
         form = Bookform()
 
     return render(request, 'app/add.html', {'form' : form})
+
+def Book_update(request,id):
+
+    book = Book.objects.get(id = id)
+
+    if request.method == 'POST':
+        form = Bookform(request.POST, instance=book)
+
+        if form.is_valid():
+            form.save() 
+
+            return redirect(details, book.id)
+    else:
+        form = Bookform(instance=book)
+
+    return render(request, 'app/update.html', {'form' : form})
