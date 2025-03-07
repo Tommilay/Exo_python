@@ -10,4 +10,5 @@ urlpatterns = [
     path('sera',views.sera),
     path('add',views.Book_add),
     path('update/<int:id>',views.Book_update),
+    path('delete/<int:id>',views.Delete_book)
 ]

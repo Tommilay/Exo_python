@@ -59,3 +59,12 @@ def Book_update(request,id):
         form = Bookform(instance=book)
 
     return render(request, 'app/update.html', {'form' : form})
+
+def Delete_book(request,id):
+    book = Book.objects.get(id = id)
+
+    if request.method == 'POST':
+        book.delete()
+        return redirect(salut)
+
+    return render(request, 'app/delete.html', {'book' : book})

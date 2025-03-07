@@ -1,0 +1,12 @@
+{% extends "app/master.html" %}
+
+{% block title %}Supprimer{% endblock %}
+
+{% block content %}
+<h1>Suppression d'un element</h1>
+<p>êtes vous sûre de vouloir supprimer le livre : {{book.titre}} ?</p>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="supprimer">
+</form>
+{% endblock %}
